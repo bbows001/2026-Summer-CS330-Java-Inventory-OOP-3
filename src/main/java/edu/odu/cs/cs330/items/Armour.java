@@ -77,6 +77,7 @@ public class Armour extends Equippable implements Item
         Armour cpy = new Armour();
 
         // Refer to the previous assignment
+        // Set all the fields of cpy to match this Armour's fields
         cpy.setName(this.name);
         cpy.setDurability(this.getDurability());
         cpy.setDefense(this.defense);

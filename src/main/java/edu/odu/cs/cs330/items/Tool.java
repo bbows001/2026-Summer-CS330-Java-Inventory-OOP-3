@@ -102,7 +102,7 @@ public class Tool extends Equippable implements Item {
         Tool rhsItem = (Tool) rhs;
 
         // Refer to the previous assignment
-          // Check for logical equivalence based on name, speed, material, modifier,
+        // Check for logical equivalence based on name, speed, material, modifier,
         // and modifierLevel
         return this.name.equals(rhsItem.name) && 
                this.speed == rhsItem.speed &&
@@ -130,7 +130,7 @@ public class Tool extends Equippable implements Item {
     @Override
     public String toString()
     {
-        // Use String.format and the provided FMT_STR
+        // Used the expected output from the assignment document for formatting specifics
         return String.join(
             System.lineSeparator(),
             String.format("  Nme: %s", super.getName()),

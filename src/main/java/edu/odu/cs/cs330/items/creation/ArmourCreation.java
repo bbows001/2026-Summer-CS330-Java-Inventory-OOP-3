@@ -22,6 +22,7 @@ public class ArmourCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Maybe call a Default Constructor...
+        // Create a new default Armour
         return new Armour();
     }
 
@@ -43,6 +44,7 @@ public class ArmourCreation implements ItemCreationStrategy
         Armour armour = new Armour();
 
         // Call the appropriate setters...
+        // Set the parameters based on position of token in String Array
         armour.setName(tokens[0]);
         armour.setMaterial(tokens[1]);
         armour.setDurability(Integer.parseInt(tokens[2]));

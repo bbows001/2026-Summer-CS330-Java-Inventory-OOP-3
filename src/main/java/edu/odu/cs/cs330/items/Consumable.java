@@ -122,7 +122,7 @@ public class Consumable implements Item {
         Consumable cpy = new Consumable();
 
         // Refer to the previous assignment
-
+        // Set all the fields of cpy to match this Consumable's fields
         cpy.setName(this.name);
         cpy.setEffect(this.effect);
         cpy.setNumberOfUses(this.uses);
@@ -145,6 +145,7 @@ public class Consumable implements Item {
         Consumable rhsItem = (Consumable) rhs;
 
         // Refer to the previous assignment
+        // Check for logical equivalence based on name and effect
         return this.name.equals(rhsItem.name) && this.effect.equals(rhsItem.effect);
     }
 
@@ -158,6 +159,7 @@ public class Consumable implements Item {
     public int hashCode()
     {
         // Refer to the previous assignment
+        // Compute hashCode using name and effect
         return this.name.hashCode() + this.effect.hashCode();
     }
 

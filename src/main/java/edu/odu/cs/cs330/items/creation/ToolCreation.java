@@ -22,6 +22,7 @@ public class ToolCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Maybe call a Default Constructor...
+        // Create a new default Tool
         return new Tool();
     }
 
@@ -43,6 +44,7 @@ public class ToolCreation implements ItemCreationStrategy
         Tool tool = new Tool();
 
         // Call the appropriate setters...
+        // Set the parameters based on position of token in String Array
         tool.setName(tokens[0]);
         tool.setMaterial(tokens[1]);
         tool.setDurability(Integer.parseInt(tokens[2]));

@@ -22,6 +22,7 @@ public class ConsumableCreation implements ItemCreationStrategy
     public Item fromDefaults()
     {
         // Maybe call a Default Constructor...
+        // Create a new default Consumable
         return new Consumable();
     }
 
@@ -43,6 +44,7 @@ public class ConsumableCreation implements ItemCreationStrategy
         Consumable consumable = new Consumable();
 
         // Call the appropriate setters...
+        // Set the parameters based on position of token in String Array
         consumable.setName(tokens[0]);
         consumable.setEffect(tokens[1]);
         consumable.setNumberOfUses(Integer.parseInt(tokens[2]));
