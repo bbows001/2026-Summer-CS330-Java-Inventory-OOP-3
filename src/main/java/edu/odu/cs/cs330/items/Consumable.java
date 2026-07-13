@@ -49,7 +49,7 @@ public class Consumable implements Item {
      */
     public Consumable()
     {
-        this.name = "[Placeholder]";
+        this.name = "";
 
         this.effect = "";
         this.uses   = 0;
@@ -123,6 +123,10 @@ public class Consumable implements Item {
 
         // Refer to the previous assignment
 
+        cpy.setName(this.name);
+        cpy.setEffect(this.effect);
+        cpy.setNumberOfUses(this.uses);
+
         return cpy;
     }
 
@@ -141,7 +145,7 @@ public class Consumable implements Item {
         Consumable rhsItem = (Consumable) rhs;
 
         // Refer to the previous assignment
-        return false;
+        return this.name.equals(rhsItem.name) && this.effect.equals(rhsItem.effect);
     }
 
     /**
@@ -154,7 +158,7 @@ public class Consumable implements Item {
     public int hashCode()
     {
         // Refer to the previous assignment
-        return -1;
+        return this.name.hashCode() + this.effect.hashCode();
     }
 
     /**
@@ -163,6 +167,13 @@ public class Consumable implements Item {
     @Override
     public String toString()
     {
-        return "  Refer to the previous assignment...";
+        // Used the expected output from the assignment document for formatting specifics
+        return String.join(
+            System.lineSeparator(),
+            String.format("  Nme: %s", this.name),
+            String.format("  Eft: %s", this.effect),
+            String.format("  Use: %d", this.uses),
+            ""
+        );
     }
 }

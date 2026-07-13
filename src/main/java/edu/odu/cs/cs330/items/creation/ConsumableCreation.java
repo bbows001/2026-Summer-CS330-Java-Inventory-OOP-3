@@ -29,7 +29,8 @@ public class ConsumableCreation implements ItemCreationStrategy
     public int requiredNumberOfValues()
     {
         // What is the correct return value?
-        return -1;
+        // Return the number of properties which is 3
+        return 3;
     }
 
     @SuppressWarnings({
@@ -42,6 +43,9 @@ public class ConsumableCreation implements ItemCreationStrategy
         Consumable consumable = new Consumable();
 
         // Call the appropriate setters...
+        consumable.setName(tokens[0]);
+        consumable.setEffect(tokens[1]);
+        consumable.setNumberOfUses(Integer.parseInt(tokens[2]));
 
         return consumable;
     }
@@ -50,6 +54,7 @@ public class ConsumableCreation implements ItemCreationStrategy
     public Item fromExisting(final Item original)
     {
         // Maybe clone original...
-        return null;
+        // Cloned the original item to create a new instance of Consumable
+        return original.clone();
     }
 }

@@ -75,7 +75,14 @@ public class Tool extends Equippable implements Item {
         Tool cpy = new Tool();
 
         // Refer to the previous assignment
-
+        // Set all the fields of cpy to match this Tool's fields
+        cpy.setName(this.name);
+        cpy.setDurability(this.getDurability());
+        cpy.setSpeed(this.speed);
+        cpy.setMaterial(this.getMaterial());
+        cpy.setModifier(this.getModifier());
+        cpy.setModifierLevel(this.getModifierLevel());
+        
         return cpy;
     }
 
@@ -95,7 +102,13 @@ public class Tool extends Equippable implements Item {
         Tool rhsItem = (Tool) rhs;
 
         // Refer to the previous assignment
-        return false;
+          // Check for logical equivalence based on name, speed, material, modifier,
+        // and modifierLevel
+        return this.name.equals(rhsItem.name) && 
+               this.speed == rhsItem.speed &&
+               this.getMaterial().equals(rhsItem.getMaterial()) &&
+               this.getModifier().equals(rhsItem.getModifier()) &&
+               this.getModifierLevel() == rhsItem.getModifierLevel();
     }
 
     /**
@@ -106,7 +119,9 @@ public class Tool extends Equippable implements Item {
     public int hashCode()
     {
         // Refer to the previous assignment
-        return -1;
+        // Compute hashCode using name, speed, material, modifier, and modifierLevel added together
+        return this.name.hashCode() + Integer.hashCode(this.speed) + this.getMaterial().hashCode()
+        + this.getModifier().hashCode() + Integer.hashCode(this.getModifierLevel());
     }
 
     /**
@@ -115,6 +130,15 @@ public class Tool extends Equippable implements Item {
     @Override
     public String toString()
     {
-        return "  Refer to the previous assignment...";
+        // Use String.format and the provided FMT_STR
+        return String.join(
+            System.lineSeparator(),
+            String.format("  Nme: %s", super.getName()),
+            String.format("  Dur: %d", this.getDurability()),
+            String.format("  Spd: %d", this.speed),
+            String.format("  Mtl: %s", this.getMaterial()),
+            String.format("  Mdr: %s (Lvl %d)", this.getModifier(), this.getModifierLevel()),
+            ""
+        );
     }
 }
